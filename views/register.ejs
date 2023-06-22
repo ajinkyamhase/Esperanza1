@@ -1,0 +1,152 @@
+<!--This file asks user to login-->
+
+<style>
+  /* Custom styles */
+
+  body {
+    background-color: #27e278;
+    font-family: Arial, sans-serif;
+    background: url("img/gallery/gallery-8.jpg") top center;
+    background-size: cover;
+    
+  }
+
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    align-self: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .card {
+    box-shadow: 0 0 10px rgba(222, 44, 44, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e7cafe;
+    align-self: center;
+  }
+  
+  .card-body {
+    box-shadow: 0 0 10px rgba(222, 44, 44, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #e7cafe;
+    align-self: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #343a40;
+    border: none;
+    border-radius: 0.25rem;
+  }
+  
+  .btn-dark {
+    background-color: #343a40;
+  }
+  
+  .p-3 {
+    padding: 1rem !important;
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .bg-success {
+    background-color: #201e1e !important;
+  }
+  
+  .text-white {
+    color: #fff !important;
+  }
+  
+  .w-75 {
+    width: 75% !important;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+</style>
+
+
+
+
+
+<div class="container mt-5">
+  
+  <% if (userFound) { %>
+    <p class="p-3 mb-2 bg-success text-white w-75">The user already exists.Please <a href="/login">Login</a></p>
+  <% } %>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <form action="/register" method="POST">
+            <a href="home1.ejs" class="logo me-auto"><img src="img/hero-bg1.jpg" alt="" class="img-fluid"
+              style="width: 40rem; height:5rem"></a>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="username">
+            </div>
+            
+            <div class="form-group">
+              <label for="email"  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+              required>Email</label>
+              <input type="email" class="form-control" name="usermail">
+            </div>
+            <div class="form-group">
+              <label for="number">Phone no.</label>
+              <input type="tel" class="form-control" name="phonenum"> 
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
